@@ -23,26 +23,42 @@ var __extends = (this && this.__extends) || (function () {
 // let greeter = new Greeter("world");
 // console.log(greeter)
 // 继承
+// class Animal {
+//     move(distanceInMeters: number = 0) {
+//         console.log(`Animal moved ${distanceInMeters}m.`);
+//     }
+// }
+// class Dog extends Animal {
+//     bark() {
+//         console.log("Woof! Woof!");
+//     }
+// }
+// const dog = new Dog();
+// dog.bark();
+// dog.move(10);
+// dog.bark()
+// private
 var Animal = /** @class */ (function () {
-    function Animal() {
+    function Animal(theName) {
+        this.name = theName;
     }
-    Animal.prototype.move = function (distanceInMeters) {
-        if (distanceInMeters === void 0) { distanceInMeters = 0; }
-        console.log("Animal moved " + distanceInMeters + "m.");
-    };
     return Animal;
 }());
-var Dog = /** @class */ (function (_super) {
-    __extends(Dog, _super);
-    function Dog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var Rhino = /** @class */ (function (_super) {
+    __extends(Rhino, _super);
+    function Rhino() {
+        return _super.call(this, "Rhino") || this;
     }
-    Dog.prototype.bark = function () {
-        console.log("Woof! Woof!");
-    };
-    return Dog;
+    return Rhino;
 }(Animal));
-var dog = new Dog();
-dog.bark();
-dog.move(10);
-dog.bark();
+var Employee = /** @class */ (function () {
+    function Employee(theName) {
+        this.name = theName;
+    }
+    return Employee;
+}());
+var animal = new Animal("Goat");
+var rhino = new Rhino();
+var employee = new Employee("Bob");
+animal = rhino;
+animal = employee;
